@@ -39,8 +39,8 @@ Este projeto consiste em uma aplicação PHP que realiza operações CRUD (Criar
 2. Configure o banco de dados SQLite:
 
     ```bash
-    cd projeto-crud-php
-    touch database/db.sqlite
+    Para utilizar o banco de dados contido na pasta database/db.sqlite 
+    é necessário que a sua instalação php tenha a extensão sqlite instalada e ativada
     ```
 
 3. Execute a aplicação:
