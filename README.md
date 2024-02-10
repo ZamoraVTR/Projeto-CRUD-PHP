@@ -33,25 +33,25 @@ Este projeto consiste em uma aplicação PHP que realiza operações CRUD (Criar
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/seunome/seurepo.git
+    git clone https://github.com/ZamoraVTR/Projeto-CRUD-PHP
     ```
 
 2. Configure o banco de dados SQLite:
 
     ```bash
-    cd seurepo
+    cd projeto-crud-php
     touch database/db.sqlite
     ```
 
 3. Execute a aplicação:
 
     ```bash
-    php -S localhost:8000
+    php -S 0.0.0.0:7070
     ```
 
 4. Abra o navegador:
 
-    Acesse [http://localhost:8000](http://localhost:8000)
+    Acesse [http://localhost:7070](http://localhost:7070)
 
 ## Estrutura do Projeto
 
