@@ -59,7 +59,7 @@ Este projeto consiste em uma aplicação PHP que realiza operações CRUD (Criar
 
 - **UserController.php**: Gerencia ações relacionadas a usuários.
 
-### Modelos
+### Models
 
 - **Connection.php**: Realiza a conexão com o banco de dados.
 
@@ -67,7 +67,7 @@ Este projeto consiste em uma aplicação PHP que realiza operações CRUD (Criar
 
 - **UserModel.php**: Modelagem das operações relacionadas a usuários.
 
-### Visões
+### Views
 
 - **edit.php**: Página para editar informações de um usuário.
 
