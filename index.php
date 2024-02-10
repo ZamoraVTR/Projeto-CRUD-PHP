@@ -1,34 +1,13 @@
 <?php
-
-require 'connection.php';
+require 'includes/connection.php';
+require 'models/UserModel.php';
+require 'models/ColorModel.php';
+require 'controllers/UserController.php';
 
 $connection = new Connection();
+$userModel = new UserModel($connection);
+$colorModel = new ColorModel($connection);
+$userController = new UserController($userModel, $colorModel);
 
-$users = $connection->query("SELECT * FROM users");
-
-echo "<table border='1'>
-
-    <tr>
-        <th>ID</th>    
-        <th>Nome</th>    
-        <th>Email</th>
-        <th>Ação</th>    
-    </tr>
-";
-
-foreach($users as $user) {
-
-    echo sprintf("<tr>
-                      <td>%s</td>
-                      <td>%s</td>
-                      <td>%s</td>
-                      <td>
-                           <a href='#'>Editar</a>
-                           <a href='#'>Excluir</a>
-                      </td>
-                   </tr>",
-        $user->id, $user->name, $user->email);
-
-}
-
-echo "</table>";
+$userController->index();
+?>

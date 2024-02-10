@@ -1,38 +1,111 @@
-# Teste de conhecimentos PHP + Banco de dados
-##### Objetivo
-Criar um Crud simples, totalmente desenvolvido em PHP, sem a utilização de frameworks, onde será possível Criar/Editar/Excluir/Listar usuários. O sistema também deve possuir a possibilidade de vincular/desvincular várias cores ao usuário.
+# Documentação do Projeto: Aplicação PHP CRUD
 
-##### Estrutura de banco de dados
-A seguinte estrutura será utilizada para persistência dos dados, podendo ser alterada a qualquer momento para melhor funcionamento do sistema:
+## Visão Geral
 
-```sql
-    tabela: users
-        id      int not null auto_increment primary key
-        name    varchar(100) not null
-        email   varchar(100) not null
-```
-```sql
-    tabela: colors
-        id      int not null auto_increment primary key
-        name    varchar(50) not null
-```
-```sql
-    tabela: user_colors
-        color_id  int
-        user_id   int
-```
+Este projeto consiste em uma aplicação PHP que realiza operações CRUD (Criar, Ler, Atualizar, Deletar) seguindo a arquitetura MVC (Model-View-Controller). A aplicação permite aos usuários gerenciar uma lista de usuários, incluindo nomes, emails e cores associadas.
 
-##### Start
-Este projeto conta com uma base sqlite com alguns registros já inseridos. Para início das atividades, use como base o arquivo `index.php`, este é apenas um arquivo exemplo onde é aberta conexão com o banco de dados e lista os usuários em uma tabela.
+## Sumário
 
-##### Pontos que serão levados em conta
-- Funcionalidade
-- Organização do código e projeto
-- Apresentação da interface (Poderá usar frameworks CSS como Bootstrap, Material, Foundation etc)
+1. [Início Rápido](#início-rápido)
+    - [Pré-requisitos](#pré-requisitos)
+    - [Instalação](#instalação)
+2. [Estrutura do Projeto](#estrutura-do-projeto)
+    - [Controladores](#controladores)
+    - [Modelos](#modelos)
+    - [Visões](#visões)
+3. [Utilização](#utilização)
+    - [Criar um Usuário](#criar-um-usuário)
+    - [Editar um Usuário](#editar-um-usuário)
+    - [Excluir um Usuário](#excluir-um-usuário)
+4. [Testes](#testes)
+5. [Dependências](#dependências)
 
-##### Dicas
-- Para utilizar o banco de dados contido na pasta `database/db.sqlite` é necessário que a sua instalação do php tenha a extensão do sqlite instalada e ativada
-- O Php possui um servidor embutido, você consegue dar start ao projeto abrindo o terminal de comando na pasta baixada e executando `php -S 0.0.0.0:7070` e em seguida abrir o navegador em `http://localhost:7070`
 
-##### Boa Sorte
-Use seu conhecimento, consulte a documentação e o google, caso ainda houver dúvidas, nos pergunte :D. Boa sorte!
+## Início Rápido
+
+### Pré-requisitos
+
+- PHP (>= 7.0)
+- SQLite
+
+### Instalação
+
+1. Clone o repositório:
+
+    ```bash
+    git clone https://github.com/seunome/seurepo.git
+    ```
+
+2. Configure o banco de dados SQLite:
+
+    ```bash
+    cd seurepo
+    touch database/db.sqlite
+    ```
+
+3. Execute a aplicação:
+
+    ```bash
+    php -S localhost:8000
+    ```
+
+4. Abra o navegador:
+
+    Acesse [http://localhost:8000](http://localhost:8000)
+
+## Estrutura do Projeto
+
+### Controladores
+
+- **UserController.php**: Gerencia ações relacionadas a usuários.
+
+### Modelos
+
+- **Connection.php**: Realiza a conexão com o banco de dados.
+
+- **ColorModel.php**: Modelagem das operações relacionadas a cores.
+
+- **UserModel.php**: Modelagem das operações relacionadas a usuários.
+
+### Visões
+
+- **edit.php**: Página para editar informações de um usuário.
+
+- **index.php**: Página principal que lista os usuários.
+
+## Utilização
+
+### Criar um Usuário
+
+- Preencha o formulário na página principal com o nome, e-mail e cores desejadas.
+
+### Editar um Usuário
+
+- Clique no botão "Editar" ao lado do usuário na lista para modificar suas informações.
+
+### Excluir um Usuário
+
+- Clique no botão "Excluir" ao lado do usuário na lista para remover o registro.
+
+## Testes
+
+Este projeto inclui testes unitários básicos para verificar a funcionalidade central das classes `Connection`, `UserModel` e `ColorModel`. Para executar os testes, siga as instruções abaixo:
+
+1. Certifique-se de ter o PHP instalado no seu sistema.
+
+2. Navegue até o diretório onde o arquivo `Tests.php` está localizado.
+
+3. Execute o comando:
+
+    ```bash
+    php Tests.php
+    ```
+
+4. Observe as mensagens de saída no terminal para verificar se os testes foram bem-sucedidos ou se houve falhas.
+
+Esses testes são uma base inicial e podem ser expandidos à medida que o projeto evolui.
+
+## Dependências
+
+- Bootstrap (front-end)
+- jQuery (front-end)
